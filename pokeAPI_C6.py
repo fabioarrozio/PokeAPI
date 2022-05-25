@@ -17,13 +17,14 @@ def main():
 
 def list_poke():  # busca o nome dos pokémons e seus atributos
     global pokemon
+    global response_poke_limit
     global response
-    response = requests.get('https://pokeapi.co/api/v2/pokemon?limit=10')
-    poke = response.json()
+    response_poke_limit = requests.get('https://pokeapi.co/api/v2/pokemon?limit=10')
+    poke = response_poke_limit.json()
     print(10*'=','Pokédex v0.1',10*'=')
     for index in poke['results']:
         print(index['name'])
-    pokemon = str(input('Digite o nome de seu pokémon: '))
+    pokemon = str(input('Digite o nome de seu pokémon: ')).lower().strip()
     response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}')
     get_csv()
 
