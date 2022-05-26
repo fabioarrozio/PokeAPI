@@ -17,7 +17,6 @@ def main():
 
 def list_poke():  # busca o nome dos pokémons e seus atributos
     global pokemon
-    global response_poke_limit
     global response
     response_poke_limit = requests.get('https://pokeapi.co/api/v2/pokemon?limit=10')
     poke = response_poke_limit.json()
