@@ -9,7 +9,6 @@
 
 To start this application you'll need 2 libs
 ```bash 
-Requests
-CSV
+pip install requests
 ```
 ### Status: Developing ⚠️
